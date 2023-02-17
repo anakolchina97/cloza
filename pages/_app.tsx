@@ -5,6 +5,7 @@ import theme from "../styles/theme";
 import "styles/fonts.scss";
 import GlobalStyles from "../styles/GlobalStyles";
 import Nav from "../components/Nav";
+import Search from "../components/Search";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <GlobalStyles />
       <ThemeProvider theme={theme}>
         <Nav />
+        <Search />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
