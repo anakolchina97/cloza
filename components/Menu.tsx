@@ -42,10 +42,7 @@ const Menu = () => {
     <MenuWrap>
       {items.map(({ name, page }) => (
         <MenuItem key={name}>
-          <MenuLink
-            href={page}
-            active={String(router.pathname === page ? true : "")}
-          >
+          <MenuLink href={page} pathname={router.pathname}>
             {name}
           </MenuLink>
         </MenuItem>
@@ -61,12 +58,12 @@ const MenuWrap = styled.ul`
 
 const MenuItem = styled.li``;
 
-const MenuLink = styled(Link)<{ active: string }>`
+const MenuLink = styled(Link)<{ pathname: string }>`
   font-weight: 500;
   font-size: ${rem(16)};
   line-height: ${rem(19)};
-  text-decoration: ${(props) => (props.active ? "underline" : "none")};
-  color: ${(props) => props.theme.colors.black};
+  text-decoration: ${(props) =>
+    props.href === props.pathname ? "underline" : "none"};
 `;
 
 export default Menu;
