@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Container from "../components/Container";
 
-const Home: NextPage = () => {
-  return <Container>Home</Container>;
+const Man: NextPage = () => {
+  return <Container>Man</Container>;
 };
 
-export default Home;
+export default Man;
