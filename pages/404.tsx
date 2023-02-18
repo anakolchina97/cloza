@@ -1,13 +1,12 @@
 import type { NextPage } from "next";
 import Container from "../components/Container";
-import Slider from "../components/Slider";
 
-const Home: NextPage = () => {
+const NotFound: NextPage = () => {
   return (
     <Container>
-      <Slider />
+      <h1>NotFound</h1>
     </Container>
   );
 };
 
-export default Home;
+export default NotFound;
