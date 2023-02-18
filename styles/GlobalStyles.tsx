@@ -16,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
   ul, ol {
     list-style: none;
   }
+  
 `;
 
 export default GlobalStyles;
