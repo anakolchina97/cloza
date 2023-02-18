@@ -6,6 +6,7 @@ import Title, { TitleH2 } from "./Title";
 import { rem } from "polished";
 import { TextItem } from "./Text";
 import Link from "next/link";
+import Image from "next/image";
 
 const Slider = () => {
   return (
@@ -32,6 +33,14 @@ const Slider = () => {
                 </SlideText>
               </SlideLink>
             </SlideContent>
+            <SlidePhotoWrap>
+              <Image
+                src={"/slider.png"}
+                width={828}
+                height={828}
+                alt={"slider"}
+              />
+            </SlidePhotoWrap>
           </Slide>
         </SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
@@ -43,12 +52,20 @@ const Slider = () => {
 };
 
 const Slide = styled.div`
+  position: relative;
+  display: flex;
   background: ${(props) => props.theme.colors.grey.light};
   border-radius: 24px;
-  height: 400px;
+  min-height: 400px;
+  overflow: hidden;
 `;
 
 const SlideContent = styled.div`
+  align-self: center;
+  position: relative;
+  padding-left: ${rem(32)};
+  z-index: 1;
+  flex-shrink: 0;
   max-width: ${rem(506)};
 `;
 
@@ -62,6 +79,12 @@ const SlideText = styled(TextItem)`
 
 const SlideLink = styled(Link)`
   margin-bottom: ${rem(32)};
+`;
+
+const SlidePhotoWrap = styled.div`
+  position: absolute;
+  left: calc(310 / 1140 * 100%);
+  top: ${rem(-33)};
 `;
 
 export default Slider;
