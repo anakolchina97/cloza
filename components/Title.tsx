@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
+import { rem } from "polished";
 
 interface ITitle {
   tag: "h1" | "h2" | "h3";
@@ -26,6 +27,7 @@ export const TitleH2 = styled.h2`
   font-size: 36px;
   line-height: 43px;
   color: ${(props) => props.theme.colors.black};
+  margin-bottom: ${rem(48)};
 `;
 
 const TitleH3 = styled.h3``;
