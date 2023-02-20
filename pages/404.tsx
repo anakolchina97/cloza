@@ -23,21 +23,20 @@ const NotFound: NextPage = () => {
 
 const NotFoundContainer = styled(ContainerWrap)`
   display: flex;
-  flex-grow: 1;
-  margin-top: calc(192 / 1440 * 100%);
-  margin-bottom: ${rem(255)};
+  height: 100vh;
+  min-height: ${rem(595)};
+  margin-top: ${rem(-32)};
+  @media (max-width: 1440px) {
+    min-height: ${rem(400)};
+  }
 `;
 
 const NotFoundInner = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
+  margin: auto;
+  text-align: center;
 `;
 
 const NotFoundTitle = styled.h1`
-  text-align: center;
   font-weight: 700;
   font-size: ${rem(124)};
   line-height: ${rem(149)};

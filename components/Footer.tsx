@@ -48,18 +48,18 @@ const Footer = () => {
 };
 
 const FooterWrap = styled.footer`
-  margin-top: auto;
   font-size: ${rem(16)};
   line-height: ${rem(19)};
+  padding-top: ${rem(30)};
+  border-top: 1px solid ${(props) => props.theme.colors.grey.light};
 `;
 
 const FooterInner = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: calc(119 / 1140 * 100%);
-  padding-bottom: ${rem(32)};
+  padding-bottom: ${rem(33)};
   border-bottom: 1px solid ${(props) => props.theme.colors.grey.light};
-  margin-bottom: ${rem(32)};
+  margin-bottom: ${rem(30)};
 `;
 
 const FooterItem = styled.div``;
