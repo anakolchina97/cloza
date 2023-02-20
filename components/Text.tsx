@@ -37,7 +37,7 @@ export const TextItem = styled.p<{
       font-weight: ${props.weight};
       font-size: ${rem(props.size)};
       line-height: ${rem(props.lineHeight)};
-      color: ${props.theme.colors.black};
+      color: ${props.theme.colors.color};
     `;
   }}
   @media (max-width: 1000px) {

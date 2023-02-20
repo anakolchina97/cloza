@@ -7,11 +7,12 @@ interface IContainer {
 }
 
 const Container = ({ children }: IContainer) => {
-  return <Wrap>{children}</Wrap>;
+  return <ContainerWrap>{children}</ContainerWrap>;
 };
 
-const Wrap = styled.div`
+export const ContainerWrap = styled.div`
   max-width: ${rem(1140)};
+  width: 100%;
   box-sizing: content-box;
   margin: 0 auto;
   padding: 0 ${rem(20)};
