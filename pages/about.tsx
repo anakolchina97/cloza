@@ -1,13 +1,13 @@
 import type { NextPage } from "next";
 import styled from "styled-components";
-import Container from "../components/Container";
+import Container, { ContainerWrap } from "../components/Container";
 import { TitleH2 } from "../components/Title";
 import { rem } from "polished";
 import { TextItem } from "../components/Text";
 
 const About: NextPage = () => {
   return (
-    <Container>
+    <AboutContainer>
       <AboutTitle>О компании</AboutTitle>
       <AboutText size={16} lineHeight={24} weight={400} color={"black"}>
         CLOZA – это маркетплейс одежды, агрегирующий в себе такие стили, как:
@@ -23,9 +23,13 @@ const About: NextPage = () => {
         тусовку, бар, вечеринку, работу и т.д. При этом мы тщательно следим за
         оригинальностью продукции и безопасностью для покупателей и продавцов.
       </AboutText>
-    </Container>
+    </AboutContainer>
   );
 };
+
+const AboutContainer = styled(ContainerWrap)`
+  margin-bottom: ${rem(98)};
+`;
 
 const AboutTitle = styled(TitleH2)`
   margin-bottom: ${rem(48)};

@@ -48,6 +48,7 @@ const Footer = () => {
 };
 
 const FooterWrap = styled.footer`
+  margin-top: auto;
   font-size: ${rem(16)};
   line-height: ${rem(19)};
   padding-top: ${rem(30)};

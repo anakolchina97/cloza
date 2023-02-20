@@ -24,8 +24,8 @@ const NotFound: NextPage = () => {
 const NotFoundContainer = styled(ContainerWrap)`
   display: flex;
   height: 100vh;
-  min-height: ${rem(595)};
   margin-top: ${rem(-32)};
+  min-height: ${rem(595)};
   @media (max-width: 1440px) {
     min-height: ${rem(400)};
   }
