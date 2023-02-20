@@ -8,6 +8,7 @@ import Nav from "../components/Nav";
 import Search from "../components/Search";
 import { useEffect, useState } from "react";
 import { Bars } from "react-loader-spinner";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [showAllContent, setShowAllContent] = useState<boolean>(false);
@@ -48,6 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Nav />
           <Search />
           <Component {...pageProps} />
+          <Footer />
         </AllContent>
       </ThemeProvider>
     </>
@@ -55,7 +57,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 const AllContent = styled.div<{ showAllContent: boolean }>`
-  display: ${(props) => (props.showAllContent ? "block" : "none")};
+  flex-direction: column;
+  height: 100vh;
+  display: ${(props) => (props.showAllContent ? "flex" : "none")};
 `;
 
 export default MyApp;
