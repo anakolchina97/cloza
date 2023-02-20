@@ -12,7 +12,6 @@ const Container = ({ children }: IContainer) => {
 
 export const ContainerWrap = styled.div`
   max-width: ${rem(1140)};
-  width: 100%;
   box-sizing: content-box;
   margin: 0 auto;
   padding: 0 ${rem(20)};

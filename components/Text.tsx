@@ -38,6 +38,8 @@ export const TextItem = styled.p<{
       font-size: ${rem(props.size)};
       line-height: ${rem(props.lineHeight)};
       color: ${props.theme.colors.color};
+      max-width: ${rem(752)};
+      margin-bottom: ${rem(32)};
     `;
   }}
   @media (max-width: 1000px) {
