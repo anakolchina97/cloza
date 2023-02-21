@@ -34,27 +34,27 @@ export const Accordion: React.FC<IAccordionProps> = ({
 };
 
 const AccordionWrap = styled.div`
-  border-bottom: 1px solid #eff0f2;
+  border-bottom: 1px solid ${(props) => props.theme.colors.grey.light};
 `;
 
 const AccordionTitle = styled.div`
   font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-  color: #121720;
+  font-size: ${rem(18)};
+  line-height: ${rem(22)};
+  color: ${(props) => props.theme.colors.black};
 `;
 
 const AccordionContent = styled.div`
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: #9095a9;
-  padding: 24px 0;
+  font-size: ${rem(16)};
+  line-height: ${rem(19)};
+  color: ${(props) => props.theme.colors.grey.default};
+  padding: ${rem(24)} 0;
 `;
 
 const AccordionHeader = styled.div`
-  padding-bottom: 24px;
   cursor: pointer;
+  padding-bottom: ${rem(24)};
   display: flex;
   justify-content: space-between;
   gap: ${rem(49)};

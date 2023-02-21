@@ -55,8 +55,8 @@ const Slide = styled.div`
   position: relative;
   display: flex;
   background: ${(props) => props.theme.colors.grey.light};
-  border-radius: 24px;
-  min-height: 400px;
+  border-radius: ${rem(24)};
+  min-height: ${rem(400)};
   overflow: hidden;
 `;
 

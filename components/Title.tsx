@@ -24,8 +24,8 @@ const TitleH1 = styled.h1``;
 
 export const TitleH2 = styled.h2`
   font-weight: 700;
-  font-size: 36px;
-  line-height: 43px;
+  font-size: ${rem(36)};
+  line-height: ${rem(43)};
   color: ${(props) => props.theme.colors.black};
   margin-bottom: ${rem(48)};
 `;
