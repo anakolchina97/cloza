@@ -28,6 +28,8 @@ const BenefitsWrap = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: ${rem(24)};
   margin-bottom: ${rem(64)};
+  padding-bottom: ${rem(64)};
+  border-bottom: 1px solid ${(props) => props.theme.colors.grey.light};
 `;
 
 export default Benefits;

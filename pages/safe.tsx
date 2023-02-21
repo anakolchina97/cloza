@@ -6,6 +6,7 @@ import { rem } from "polished";
 import { TextItem } from "../components/Text";
 import Advantages from "../components/Advantages";
 import Benefits from "../components/Benefits";
+import Hows from "../components/Hows";
 
 const Safe: NextPage = () => {
   const dataAdvantages = [
@@ -37,6 +38,25 @@ const Safe: NextPage = () => {
       text: "Продавец гарантированно получит денежные средства, при своевременной отправке необходимого заказа.",
     },
   ];
+
+  const dataHows = [
+    {
+      text: "Покупатель выбирает подходящий товар",
+    },
+    {
+      text: "Покупатель выбирает способ доставки, который предоставляет продавец, оплачивает товар через безопасную сделку (оплачивает 7% комиссии), деньги поступают на безопасный счёт CloudPayments.ru.",
+    },
+    {
+      text: "Продавец получает заказ, если товар в наличии, продавец отправляет его покупателю. Если товара нет в наличии, продавец отменяет заказ, деньги возвращаются покупателю (за вычетом 3.9% комиссии)",
+    },
+    {
+      text: "Покупатель принимает и проверяет товар, нажимает кнопку подтверждения получения заказа в личном кабинете",
+    },
+    {
+      text: "CloudPayments.ru переводит деньги продавцу (за вычетом 7% комиссии)",
+    },
+  ];
+
   return (
     <SafeWrap>
       <Container>
@@ -61,6 +81,8 @@ const Safe: NextPage = () => {
         </SafeInfo>
         <SafeTitle>Кому это выгодно?</SafeTitle>
         <Benefits dataBenefits={dataBenefits} />
+        <SafeTitle>Как это работает?</SafeTitle>
+        <Hows dataHows={dataHows} />
       </Container>
     </SafeWrap>
   );
