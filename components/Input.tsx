@@ -35,12 +35,12 @@ const InputWrap = styled.input<{ type: string }>`
       `;
     } else {
       return `
-        font-size: 16px;
-        line-height: 19px;
+        font-size: ${rem(16)};
+        line-height: ${rem(19)};
         padding: ${rem(14)} ${rem(16)};
         background: #FFFFFF;
         border: 1px solid #EFF0F2;
-        border-radius: 12px;
+        border-radius: ${rem(12)};
         &::placeholder {
           color: #9095A9;
         }
