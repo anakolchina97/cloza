@@ -22,7 +22,7 @@ const sizeMobile = (size: number) => {
     case 20:
       return 16;
     default:
-      return 0;
+      return 16;
   }
 };
 
