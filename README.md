@@ -19,3 +19,4 @@ yarn dev
 - https://cloza.vercel.app/rules
 - https://cloza.vercel.app/safe
 - https://cloza.vercel.app/terms
+- https://cloza.vercel.app/categories
