@@ -4,11 +4,12 @@ import styled, { ThemeProvider } from "styled-components";
 import theme from "../styles/theme";
 import "styles/fonts.scss";
 import GlobalStyles from "../styles/GlobalStyles";
-import Nav from "../components/Nav";
+import Nav from "../components/Header";
 import Search from "../components/Search";
 import { useEffect, useState } from "react";
 import { Bars } from "react-loader-spinner";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [showAllContent, setShowAllContent] = useState<boolean>(false);
@@ -46,7 +47,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
         )}
         <AllContent showAllContent={showAllContent}>
-          <Nav />
+          <Header />
           <Search />
           <Component {...pageProps} />
           <Footer />
