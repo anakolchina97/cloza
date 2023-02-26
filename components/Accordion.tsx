@@ -8,12 +8,14 @@ export interface IAccordionProps {
   title?: string;
   isActive?: boolean;
   children?: React.ReactNode;
+  filter?: string;
 }
 
 export const Accordion: React.FC<IAccordionProps> = ({
   title = "",
   isActive = false,
   children,
+  filter,
 }) => {
   const [isOpen, setIsOpen] = useState(isActive);
   const handleToggleClick = () => {
@@ -22,13 +24,17 @@ export const Accordion: React.FC<IAccordionProps> = ({
 
   return (
     <AccordionWrap>
-      <AccordionHeader onClick={handleToggleClick}>
+      <AccordionHeader onClick={handleToggleClick} filter={filter}>
         <AccordionTitle>{title}</AccordionTitle>
         <AccordionIcon isOpen={isOpen} />
       </AccordionHeader>
-      <SlideDown>
-        {isOpen && <AccordionContent>{children}</AccordionContent>}
-      </SlideDown>
+      <SlideDownWrap filter={filter}>
+        <SlideDown>
+          {isOpen && (
+            <AccordionContent filter={filter}>{children}</AccordionContent>
+          )}
+        </SlideDown>
+      </SlideDownWrap>
     </AccordionWrap>
   );
 };
@@ -39,25 +45,25 @@ const AccordionWrap = styled.div`
 
 const AccordionTitle = styled.div`
   font-weight: 500;
-  font-size: ${rem(18)};
-  line-height: ${rem(22)};
   color: ${(props) => props.theme.colors.black};
 `;
 
-const AccordionContent = styled.div`
+const AccordionContent = styled.div<{ filter?: string }>`
   font-weight: 400;
   font-size: ${rem(16)};
   line-height: ${rem(19)};
   color: ${(props) => props.theme.colors.grey.default};
-  padding: ${rem(24)} 0;
+  padding: ${(props) => (props.filter ? `0 0 ${rem(15)}` : `${rem(24)} 0`)};
 `;
 
-const AccordionHeader = styled.div`
+const AccordionHeader = styled.div<{ filter?: string }>`
   cursor: pointer;
-  padding-bottom: ${rem(24)};
   display: flex;
   justify-content: space-between;
   gap: ${rem(49)};
+  padding-bottom: ${(props) => (props.filter ? rem(32) : rem(24))};
+  font-size: ${(props) => (props.filter ? rem(20) : rem(18))};
+  line-height: ${(props) => (props.filter ? rem(24) : rem(22))};
 `;
 
 const AccordionIcon = styled.i<{ isOpen: boolean }>`
@@ -69,4 +75,9 @@ const AccordionIcon = styled.i<{ isOpen: boolean }>`
   display: block;
   transform: ${(props) => (props.isOpen ? "rotate(180deg)" : "rotate(0deg)")};
   transition: transform 500ms;
+`;
+
+const SlideDownWrap = styled.div<{ filter?: string }>`
+  position: relative;
+  top: ${rem(-10)};
 `;
