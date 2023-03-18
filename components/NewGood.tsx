@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 import { rem } from "polished";
+import Favorites from "./Icons/Favorites";
+import Basket from "./Icons/Basket";
 
 type Props = {};
 
@@ -23,6 +25,16 @@ const NewGood = (props: Props) => {
         </NewGoodTitle>
         <NewGoodPrice>27 550₽</NewGoodPrice>
       </NewGoodHeader>
+      <NewGoodDescription>Надевали несколько раз</NewGoodDescription>
+      <NewGoodSize>XS</NewGoodSize>
+      <NewGoodButtons>
+        <NewGoodButton>
+          <Favorites />
+        </NewGoodButton>
+        <NewGoodButton>
+          <Basket />
+        </NewGoodButton>
+      </NewGoodButtons>
     </NewGoodWrap>
   );
 };
@@ -63,6 +75,29 @@ const NewGoodSafe = styled.i`
 
 const NewGoodPrice = styled.p`
   text-align: right;
+`;
+
+const NewGoodDescription = styled.p`
+  color: ${(props) => props.theme.colors.gray.default};
+  margin-bottom: ${rem(8)};
+`;
+
+const NewGoodSize = styled.p`
+  color: ${(props) => props.theme.colors.gray.default};
+  margin-bottom: ${rem(16)};
+`;
+
+const NewGoodButtons = styled.div`
+  display: flex;
+  gap: ${rem(12)};
+`;
+
+const NewGoodButton = styled.button`
+  width: ${rem(20)};
+  height: ${rem(20)};
+  border: none;
+  background: transparent;
+  cursor: pointer;
 `;
 
 export default NewGood;
