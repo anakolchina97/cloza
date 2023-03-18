@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { useState } from "react";
 import styled from "styled-components";
 import Container from "../components/Container";
+import NewGoods from "../components/NewGoods";
 import Slider from "../components/Slider";
 import { ITab, Tabs } from "../components/Tabs";
 
@@ -29,7 +30,13 @@ const Home: NextPage = () => {
       <Slider />
       <Tabs tabs={tabs} selectedId={activeTabId} onClick={handleTabClick} />
       <TabsContent>
-        <div>{activeTabId === tabs[0].id && <>1</>}</div>
+        <div>
+          {activeTabId === tabs[0].id && (
+            <>
+              <NewGoods />
+            </>
+          )}
+        </div>
         <div>{activeTabId === tabs[1].id && <>2</>}</div>
         <div>{activeTabId === tabs[2].id && <>3</>}</div>
       </TabsContent>
