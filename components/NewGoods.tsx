@@ -7,6 +7,25 @@ import NewGood from "./NewGood";
 type Props = {};
 
 const NewGoods = (props: Props) => {
+  const goods = [
+    {
+      safe: true,
+      title: "Black Cap",
+      description: "Надевали несколько раз",
+      photo: "1",
+      price: "27 550",
+    },
+    {
+      sale: true,
+      safe: true,
+      title: "Black Cap",
+      description: "Надевали несколько раз",
+      photo: "1",
+      price: "27 550",
+      oldPrice: "28 599",
+    },
+  ];
+
   return (
     <NewGoodsWrap>
       <NewGoodsTitle>
@@ -14,7 +33,9 @@ const NewGoods = (props: Props) => {
         <span>Новые товары</span>
       </NewGoodsTitle>
       <NewGoodsCards>
-        <NewGood />
+        {goods.map((good, index) => (
+          <NewGood {...good} key={index} />
+        ))}
       </NewGoodsCards>
     </NewGoodsWrap>
   );

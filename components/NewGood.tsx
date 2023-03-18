@@ -4,13 +4,20 @@ import styled from "styled-components";
 import { rem } from "polished";
 import Favorites from "./Icons/Favorites";
 import Basket from "./Icons/Basket";
+import LabelGood from "./LabelGood";
 
-type Props = {};
+interface INewGood {
+  safe: boolean;
+  title: string;
+  description: string;
+  oldPrice?: string | number;
+}
 
-const NewGood = (props: Props) => {
+const NewGood = ({ safe, title, description, oldPrice }: INewGood) => {
   return (
     <NewGoodWrap>
       <NewGoodImg>
+        <LabelGood />
         <Image
           src={"/new-good-1.png"}
           width={267}
@@ -20,12 +27,15 @@ const NewGood = (props: Props) => {
       </NewGoodImg>
       <NewGoodHeader>
         <NewGoodTitle>
-          <NewGoodSafe />
-          <span>Black Cap</span>
+          {safe && <NewGoodSafe />}
+          <span>{title}</span>
         </NewGoodTitle>
-        <NewGoodPrice>27 550₽</NewGoodPrice>
+        <NewGoodPrice>
+          {oldPrice && <NewGoodPriceOld>{oldPrice}₽</NewGoodPriceOld>}
+          <span>27 550₽</span>
+        </NewGoodPrice>
       </NewGoodHeader>
-      <NewGoodDescription>Надевали несколько раз</NewGoodDescription>
+      <NewGoodDescription>{description}</NewGoodDescription>
       <NewGoodSize>XS</NewGoodSize>
       <NewGoodButtons>
         <NewGoodButton>
@@ -42,6 +52,7 @@ const NewGood = (props: Props) => {
 const NewGoodWrap = styled.article``;
 
 const NewGoodImg = styled.div`
+  position: relative;
   border-radius: ${rem(16)};
   overflow: hidden;
   margin-bottom: ${rem(14)};
@@ -60,7 +71,7 @@ const NewGoodHeader = styled.header`
   border-bottom: 1px solid ${(props) => props.theme.colors.gray.light};
 `;
 
-const NewGoodTitle = styled.p`
+const NewGoodTitle = styled.div`
   display: flex;
   align-items: center;
   gap: ${rem(8)};
@@ -73,8 +84,15 @@ const NewGoodSafe = styled.i`
   background-size: cover;
 `;
 
-const NewGoodPrice = styled.p`
+const NewGoodPrice = styled.div`
   text-align: right;
+  display: flex;
+  gap: ${rem(12)};
+`;
+
+const NewGoodPriceOld = styled.p`
+  text-decoration: line-through;
+  color: ${(props) => props.theme.colors.red};
 `;
 
 const NewGoodDescription = styled.p`
