@@ -13,15 +13,16 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const Slider = () => {
+  const fakeArray = [0, 1, 2, 3];
   return (
-    <div>
+    <SliderWrap>
       <Swiper
         pagination={true}
         modules={[Pagination]}
         spaceBetween={50}
         slidesPerView={1}
       >
-        {[...Array(4)].map((index) => (
+        {fakeArray.map((index) => (
           <SwiperSlide key={index}>
             <Slide>
               <SlideContent>
@@ -47,6 +48,7 @@ const Slider = () => {
               <SlidePhotoWrap>
                 <Image
                   src={"/slider.png"}
+                  priority={true}
                   width={828}
                   height={828}
                   alt={"slider"}
@@ -56,14 +58,18 @@ const Slider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </SliderWrap>
   );
 };
+
+const SliderWrap = styled.section`
+  margin-bottom: ${rem(32)};
+`;
 
 const Slide = styled.div`
   position: relative;
   display: flex;
-  background: ${(props) => props.theme.colors.grey.light};
+  background: ${(props) => props.theme.colors.gray.light};
   border-radius: ${rem(24)};
   min-height: ${rem(400)};
   overflow: hidden;

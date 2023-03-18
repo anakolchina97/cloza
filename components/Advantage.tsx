@@ -33,7 +33,7 @@ const AdvantageIconBox = styled.div`
   margin: 0 auto;
   border-radius: 50%;
   background: ${(props) => props.theme.colors.white};
-  border: 1px solid ${(props) => props.theme.colors.grey.light};
+  border: 1px solid ${(props) => props.theme.colors.gray.light};
   margin-bottom: ${rem(24)};
 `;
 

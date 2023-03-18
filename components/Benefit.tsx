@@ -30,7 +30,7 @@ const BenefitWrap = styled.div`
   grid-template-columns: ${rem(40)} auto;
   gap: ${rem(16)};
   padding: ${rem(32)};
-  border: 1px solid ${(props) => props.theme.colors.grey.light};
+  border: 1px solid ${(props) => props.theme.colors.gray.light};
   border-radius: ${rem(16)};
 `;
 

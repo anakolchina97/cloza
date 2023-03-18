@@ -108,7 +108,7 @@ const FooterWrap = styled.footer`
   font-size: ${rem(16)};
   line-height: ${rem(19)};
   padding-top: ${rem(30)};
-  border-top: 1px solid ${(props) => props.theme.colors.grey.light};
+  border-top: 1px solid ${(props) => props.theme.colors.gray.light};
 `;
 
 const FooterInner = styled.div`
@@ -116,7 +116,7 @@ const FooterInner = styled.div`
   grid-template-columns: repeat(5, auto);
   gap: calc(119 / 1140 * 100%);
   padding-bottom: ${rem(33)};
-  border-bottom: 1px solid ${(props) => props.theme.colors.grey.light};
+  border-bottom: 1px solid ${(props) => props.theme.colors.gray.light};
   margin-bottom: ${rem(30)};
 `;
 
@@ -140,7 +140,7 @@ const FooterLink = styled(Link)<{ pathname: string }>`
   color: ${(props) =>
     props.href === props.pathname
       ? props.theme.colors.purple
-      : props.theme.colors.grey.default};
+      : props.theme.colors.gray.default};
 `;
 
 const FooterLinkText = styled.span`
@@ -158,7 +158,7 @@ const FooterInfo = styled.div`
 
 const FooterInfoItem = styled.p`
   font-weight: 400;
-  color: ${(props) => props.theme.colors.grey.default};
+  color: ${(props) => props.theme.colors.gray.default};
 `;
 
 const FooterInfoLink = styled(Link)`
