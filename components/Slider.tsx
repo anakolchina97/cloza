@@ -1,51 +1,60 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import { Pagination } from "swiper";
 import styled from "styled-components";
-import Title, { TitleH2 } from "./Title";
+import { TitleH2 } from "./Title";
 import { rem } from "polished";
 import { TextItem } from "./Text";
 import Link from "next/link";
 import Image from "next/image";
+import Button from "./Button";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 const Slider = () => {
   return (
     <div>
-      <Swiper spaceBetween={50} slidesPerView={1}>
-        <SwiperSlide>
-          <Slide>
-            <SlideContent>
-              <SlideTitle tag="h2">
-                Быть на стиле - <br />
-                значит быть первым
-              </SlideTitle>
-              <SlideText weight={700} size={20} lineHeight={24} color="black">
-                -20% летняя распродажа
-              </SlideText>
-              <SlideLink href={"/"}>
-                <SlideText
-                  size={16}
-                  lineHeight={19}
-                  weight={400}
-                  color={"purple"}
-                >
-                  Условия проведения акции
+      <Swiper
+        pagination={true}
+        modules={[Pagination]}
+        spaceBetween={50}
+        slidesPerView={1}
+      >
+        {[...Array(4)].map((index) => (
+          <SwiperSlide key={index}>
+            <Slide>
+              <SlideContent>
+                <SlideTitle tag="h2">
+                  Быть на стиле - <br />
+                  значит быть первым
+                </SlideTitle>
+                <SlideText weight={700} size={20} lineHeight={24} color="black">
+                  -20% летняя распродажа
                 </SlideText>
-              </SlideLink>
-            </SlideContent>
-            <SlidePhotoWrap>
-              <Image
-                src={"/slider.png"}
-                width={828}
-                height={828}
-                alt={"slider"}
-              />
-            </SlidePhotoWrap>
-          </Slide>
-        </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
+                <SlideLink href={"/"}>
+                  <SlideText
+                    size={16}
+                    lineHeight={19}
+                    weight={400}
+                    color={"purple"}
+                  >
+                    Условия проведения акции
+                  </SlideText>
+                </SlideLink>
+                <Button arrow={true}>Подробнее</Button>
+              </SlideContent>
+              <SlidePhotoWrap>
+                <Image
+                  src={"/slider.png"}
+                  width={828}
+                  height={828}
+                  alt={"slider"}
+                />
+              </SlidePhotoWrap>
+            </Slide>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
@@ -78,6 +87,9 @@ const SlideText = styled(TextItem)`
 `;
 
 const SlideLink = styled(Link)`
+  display: block;
+  margin-bottom: ${rem(32)};
+  color: ${(props) => props.theme.colors.purple};
   margin-bottom: ${rem(32)};
 `;
 

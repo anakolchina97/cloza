@@ -5,7 +5,6 @@ import React, {
 } from "react";
 import styled from "styled-components";
 import { rem } from "polished";
-import { AppProps } from "next/app";
 
 interface IButton
   extends DetailedHTMLProps<
@@ -13,13 +12,21 @@ interface IButton
     HTMLButtonElement
   > {
   children: ReactNode;
+  arrow?: Boolean;
 }
 
-const Button = ({ children, onClick }: IButton) => {
-  return <ButtonWrap onClick={onClick}>{children}</ButtonWrap>;
+const Button = ({ children, arrow, onClick }: IButton) => {
+  return (
+    <ButtonWrap onClick={onClick}>
+      {children} {arrow && <ButtonArrow />}
+    </ButtonWrap>
+  );
 };
 
 const ButtonWrap = styled.button`
+  display: flex;
+  align-items: center;
+  gap: ${rem(10)};
   font-weight: 500;
   font-size: ${rem(16)};
   line-height: ${rem(19)};
@@ -29,6 +36,12 @@ const ButtonWrap = styled.button`
   border-radius: ${rem(12)};
   border: none;
   cursor: pointer;
+`;
+
+const ButtonArrow = styled.i`
+  width: ${rem(20)};
+  height: ${rem(20)};
+  background: url("button-arrow.svg") no-repeat center center;
 `;
 
 export default Button;
