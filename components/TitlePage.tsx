@@ -22,7 +22,7 @@ const TitlePage = ({ title }: ITitlePage) => {
 const TitlePageWrap = styled.div`
   padding: ${rem(24)} 0;
   margin-top: ${rem(-32)};
-  background: ${(props) => props.theme.colors.grey.light};
+  background: ${(props) => props.theme.colors.gray.light};
   margin-bottom: ${rem(32)};
 `;
 

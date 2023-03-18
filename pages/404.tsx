@@ -40,7 +40,7 @@ const NotFoundTitle = styled.h1`
   font-weight: 700;
   font-size: ${rem(124)};
   line-height: ${rem(149)};
-  color: ${(props) => props.theme.colors.grey.light};
+  color: ${(props) => props.theme.colors.gray.light};
 `;
 
 const NotFoundSubtitle = styled.p`

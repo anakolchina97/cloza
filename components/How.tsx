@@ -26,7 +26,7 @@ const HowWrap = styled.div`
   gap: ${rem(24)};
   padding-bottom: ${rem(23)};
   margin-bottom: ${rem(24)};
-  border-bottom: 1px solid ${(props) => props.theme.colors.grey.light};
+  border-bottom: 1px solid ${(props) => props.theme.colors.gray.light};
   &:last-child {
     border: none;
   }

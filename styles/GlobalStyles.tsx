@@ -7,13 +7,13 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
-  html,body {
-    overflow-x: hidden;
-  }
   
   body {
     font-family: "PT Root UI", Arial, Helvetica, sans-serif;
+    color: #121720;
+    font-size: ${rem(16)};
+    line-height: ${rem(19)};
+
   }
   
   a {

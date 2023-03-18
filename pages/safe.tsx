@@ -103,10 +103,10 @@ const SafeInfo = styled.p`
   font-weight: 400;
   font-size: ${rem(16)};
   line-height: 138%;
-  color: ${(props) => props.theme.colors.grey.default};
+  color: ${(props) => props.theme.colors.gray.default};
   padding-bottom: ${rem(64)};
   margin-bottom: ${rem(64)};
-  border-bottom: 1px solid ${(props) => props.theme.colors.grey.light};
+  border-bottom: 1px solid ${(props) => props.theme.colors.gray.light};
 `;
 
 export default Safe;

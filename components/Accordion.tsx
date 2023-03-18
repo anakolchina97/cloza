@@ -40,7 +40,7 @@ export const Accordion: React.FC<IAccordionProps> = ({
 };
 
 const AccordionWrap = styled.div`
-  border-bottom: 1px solid ${(props) => props.theme.colors.grey.light};
+  border-bottom: 1px solid ${(props) => props.theme.colors.gray.light};
 `;
 
 const AccordionTitle = styled.div`
@@ -52,7 +52,7 @@ const AccordionContent = styled.div<{ filter?: string }>`
   font-weight: 400;
   font-size: ${rem(16)};
   line-height: ${rem(19)};
-  color: ${(props) => props.theme.colors.grey.default};
+  color: ${(props) => props.theme.colors.gray.default};
   padding: ${(props) => (props.filter ? `0 0 ${rem(15)}` : `${rem(24)} 0`)};
 `;
 
