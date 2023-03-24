@@ -14,38 +14,52 @@ const Sort = () => {
 
   return (
     <SortWrap>
+      <SortTitle>Сортировать:</SortTitle>
       <CustomSelect
         defaultValue={selectedOption}
         onChange={setSelectedOption}
         options={options}
         placeholder="Цена по возрастанию"
+        components={{
+          IndicatorSeparator: () => null,
+        }}
       />
     </SortWrap>
   );
 };
 
-const SortWrap = styled.div``;
+const SortWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${rem(12)};
+`;
+
+const SortTitle = styled.p`
+  color: ${(props) => props.theme.colors.gray.default};
+`;
 
 export const CustomSelect = styled(Select).attrs({
   styles: {
     control: (provided: any) => ({
       ...provided,
-      backgroundColor: "var(--colors-ui-base)",
-      color: "var(--colors-text)",
       borderRadius: `${rem(16)}`,
       padding: "0.25rem",
-      boxShadow: "var(--shadow)",
       height: "50px",
     }),
     option: (provided: any, state: any) => ({
       ...provided,
       cursor: "pointer",
-      color: "var(--colors-text)",
       backgroundColor: "white",
+    }),
+    dropdownIndicator: (base: any) => ({
+      ...base,
+      padding: 0,
+      paddingRight: ` ${rem(10)}`,
+      color: `#121720`,
     }),
   },
 })`
-  width: ${rem(250)};
+  width: ${rem(223)};
   & > * {
     box-shadow: var(--shadow);
   }
