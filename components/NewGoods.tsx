@@ -4,6 +4,7 @@ import { TitleH2 } from "./Title";
 import { rem } from "polished";
 import NewGood from "./NewGood";
 import Button from "./Button";
+import Sort from "./Sort";
 
 type Props = {};
 
@@ -110,10 +111,13 @@ const NewGoods = (props: Props) => {
 
   return (
     <NewGoodsWrap>
-      <NewGoodsTitle>
-        <NewGoodsTitleInfo>Недавние поступления</NewGoodsTitleInfo>
-        <span>Новые товары</span>
-      </NewGoodsTitle>
+      <NewGoodsHeader>
+        <NewGoodsTitle>
+          <NewGoodsTitleInfo>Недавние поступления</NewGoodsTitleInfo>
+          <span>Новые товары</span>
+        </NewGoodsTitle>
+        <Sort />
+      </NewGoodsHeader>
       <NewGoodsCards>
         {goods.map((good, index) => (
           <NewGood {...good} key={index} />
@@ -131,7 +135,17 @@ const NewGoodsWrap = styled.section`
   border-bottom: 1px solid ${(props) => props.theme.colors.gray.light};
 `;
 
-const NewGoodsTitle = styled(TitleH2)``;
+const NewGoodsHeader = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: ${rem(20)};
+  margin-bottom: ${rem(48)};
+`;
+
+const NewGoodsTitle = styled(TitleH2)`
+  margin-bottom: 0;
+`;
 
 const NewGoodsTitleInfo = styled.p`
   margin-bottom: ${rem(4)};
