@@ -5,23 +5,41 @@ import { rem } from "polished";
 import Favorites from "./Icons/Favorites";
 import Basket from "./Icons/Basket";
 import LabelGood from "./LabelGood";
+import Msg from "./Icons/Msg";
 
-interface INewGood {
-  safe: boolean;
-  title: string;
-  description: string;
-  oldPrice?: string | number;
+interface IPhoto {
+  url: string;
+  width: number;
+  height: number;
 }
 
-const NewGood = ({ safe, title, description, oldPrice }: INewGood) => {
+interface INewGood {
+  sale?: boolean;
+  safe?: boolean;
+  title: string;
+  description: string;
+  photo: IPhoto;
+  oldPrice?: string | number;
+  buy?: boolean;
+}
+
+const NewGood = ({
+  sale,
+  safe,
+  title,
+  description,
+  photo,
+  oldPrice,
+  buy,
+}: INewGood) => {
   return (
     <NewGoodWrap>
       <NewGoodImg>
-        <LabelGood />
+        <LabelGood sale={sale} />
         <Image
-          src={"/new-good-1.png"}
-          width={267}
-          height={182}
+          src={`/new-good-${photo.url}.png`}
+          width={photo.width}
+          height={photo.height}
           alt={"new-good-1"}
         />
       </NewGoodImg>
@@ -41,9 +59,15 @@ const NewGood = ({ safe, title, description, oldPrice }: INewGood) => {
         <NewGoodButton>
           <Favorites />
         </NewGoodButton>
-        <NewGoodButton>
-          <Basket />
-        </NewGoodButton>
+        {buy ? (
+          <NewGoodButton>
+            <Basket />
+          </NewGoodButton>
+        ) : (
+          <NewGoodButton>
+            <Msg />
+          </NewGoodButton>
+        )}
       </NewGoodButtons>
     </NewGoodWrap>
   );

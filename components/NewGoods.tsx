@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { TitleH2 } from "./Title";
 import { rem } from "polished";
 import NewGood from "./NewGood";
+import Button from "./Button";
 
 type Props = {};
 
@@ -12,17 +13,98 @@ const NewGoods = (props: Props) => {
       safe: true,
       title: "Black Cap",
       description: "Надевали несколько раз",
-      photo: "1",
+      photo: {
+        url: "1",
+        width: 267,
+        height: 182,
+      },
       price: "27 550",
+      buy: true,
     },
     {
       sale: true,
       safe: true,
       title: "Black Cap",
       description: "Надевали несколько раз",
-      photo: "1",
+      photo: {
+        url: "2",
+        width: 267,
+        height: 222,
+      },
       price: "27 550",
       oldPrice: "28 599",
+      buy: true,
+    },
+    {
+      title: "Black Cap",
+      description: "Надевали несколько раз",
+      photo: {
+        url: "3",
+        width: 267,
+        height: 154,
+      },
+      price: "27 550",
+    },
+    {
+      safe: true,
+      title: "Black Cap",
+      description: "Надевали несколько раз",
+      photo: {
+        url: "1",
+        width: 267,
+        height: 182,
+      },
+      price: "27 550",
+      buy: true,
+    },
+    {
+      sale: true,
+      safe: true,
+      title: "Black Cap",
+      description: "Надевали несколько раз",
+      photo: {
+        url: "2",
+        width: 267,
+        height: 222,
+      },
+      price: "27 550",
+      oldPrice: "28 599",
+      buy: true,
+    },
+    {
+      safe: true,
+      title: "Black Cap",
+      description: "Надевали несколько раз",
+      photo: {
+        url: "3",
+        width: 267,
+        height: 154,
+      },
+      price: "27 550",
+      buy: true,
+    },
+    {
+      safe: true,
+      sale: true,
+      title: "Black Cap",
+      description: "Надевали несколько раз",
+      photo: {
+        url: "1",
+        width: 267,
+        height: 182,
+      },
+      price: "27 550",
+      buy: true,
+    },
+    {
+      title: "Black Cap",
+      description: "Надевали несколько раз",
+      photo: {
+        url: "1",
+        width: 267,
+        height: 182,
+      },
+      price: "27 550",
     },
   ];
 
@@ -37,12 +119,16 @@ const NewGoods = (props: Props) => {
           <NewGood {...good} key={index} />
         ))}
       </NewGoodsCards>
+      <NewGoodsButton>
+        <Button>Показать еще</Button>
+      </NewGoodsButton>
     </NewGoodsWrap>
   );
 };
 
 const NewGoodsWrap = styled.section`
   margin-bottom: ${rem(64)};
+  border-bottom: 1px solid ${(props) => props.theme.colors.gray.light};
 `;
 
 const NewGoodsTitle = styled(TitleH2)``;
@@ -59,6 +145,13 @@ const NewGoodsCards = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: ${rem(32)} ${rem(24)};
+  margin-bottom: ${rem(32)};
+`;
+
+const NewGoodsButton = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: ${rem(32)};
 `;
 
 export default NewGoods;
