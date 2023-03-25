@@ -46,6 +46,28 @@ const GlobalStyles = createGlobalStyle`
     max-width: ${rem(947)};
     width: 100%;
     margin: 0 auto;
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: ${rem(32)};
+      height: ${rem(32)};
+      border-radius: ${rem(8)};
+      border: 1px solid #EFF0F2;
+      &::after {
+        content: '';
+        width: ${rem(20)};
+        height: ${rem(20)};
+        background: url('./slider-arrow.svg') no-repeat center center;
+      }
+    }
+    .swiper-button-prev {
+      left: 0;
+      &::after {
+        transform: scale(-1, 1);
+      }
+    }
+    .swiper-button-next  {
+      right: 0;
+    }
   }
 `;
 

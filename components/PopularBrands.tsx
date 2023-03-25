@@ -28,25 +28,28 @@ const PopularBrands = (props: Props) => {
           spaceBetween={103}
         >
           <SwiperSlide>
-            <img src="./popular-1.svg" />
+            <img src="./adidas.svg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./popular-1.svg" />
+            <img src="./nike.svg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./popular-1.svg" />
+            <img src="./adidas.svg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./popular-1.svg" />
+            <img src="./nike.svg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./popular-1.svg" />
+            <img src="./adidas.svg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./popular-1.svg" />
+            <img src="./nike.svg" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./popular-1.svg" />
+            <img src="./adidas.svg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="./nike.svg" />
           </SwiperSlide>
         </Swiper>
       </PopularBrandsSlider>
