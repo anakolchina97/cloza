@@ -4,13 +4,13 @@ import Select from "react-select";
 import { rem } from "polished";
 
 const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
+  { value: "up", label: "Цена по возрастанию" },
+  { value: "down", label: "Цена по убыванию" },
 ];
 
 const Sort = () => {
   const [selectedOption, setSelectedOption] = useState<null | any>(null);
+  console.log(selectedOption);
 
   return (
     <SortWrap>
@@ -50,6 +50,7 @@ export const CustomSelect = styled(Select).attrs({
       ...provided,
       cursor: "pointer",
       backgroundColor: "white",
+      color: state.isSelected ? "#9095A9" : "#121720",
     }),
     dropdownIndicator: (base: any) => ({
       ...base,
