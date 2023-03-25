@@ -13,7 +13,6 @@ const GlobalStyles = createGlobalStyle`
     color: #121720;
     font-size: ${rem(16)};
     line-height: ${rem(19)};
-
   }
   
   a {
@@ -40,7 +39,13 @@ const GlobalStyles = createGlobalStyle`
   }
   .swiper-pagination-bullet-active{
     background: #7984C0;
-    
+  }
+
+  .popular-brands {
+    position: static;
+    max-width: ${rem(947)};
+    width: 100%;
+    margin: 0 auto;
   }
 `;
 
