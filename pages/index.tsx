@@ -3,6 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import Container from "../components/Container";
 import NewGoods from "../components/NewGoods";
+import PopularBrands from "../components/PopularBrands";
 import PopularCategories from "../components/PopularCategories";
 import Slider from "../components/Slider";
 import { ITab, Tabs } from "../components/Tabs";
@@ -36,6 +37,7 @@ const Home: NextPage = () => {
             <>
               <NewGoods />
               <PopularCategories />
+              <PopularBrands />
             </>
           )}
         </div>
