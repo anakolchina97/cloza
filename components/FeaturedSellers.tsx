@@ -53,6 +53,7 @@ const FeaturedSellers = (props: Props) => {
 
 const FeaturedSellersWrap = styled.section`
   margin-bottom: ${rem(64)};
+  border-bottom: 1px solid ${(props) => props.theme.colors.gray.light};
 `;
 
 const FeaturedSellersHeader = styled.header`
@@ -79,6 +80,7 @@ const FeaturedSellersCards = styled.div`
   display: grid;
   gap: ${rem(24)};
   grid-template-columns: repeat(4, 1fr);
+  margin-bottom: ${rem(64)};
 `;
 
 export default FeaturedSellers;

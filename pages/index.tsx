@@ -8,6 +8,7 @@ import PopularBrands from "../components/PopularBrands";
 import PopularCategories from "../components/PopularCategories";
 import Slider from "../components/Slider";
 import { ITab, Tabs } from "../components/Tabs";
+import Why from "../components/Why";
 
 const Home: NextPage = () => {
   const tabs: ITab[] = [
@@ -40,6 +41,7 @@ const Home: NextPage = () => {
               <PopularCategories />
               <PopularBrands />
               <FeaturedSellers />
+              <Why />
             </>
           )}
         </div>
