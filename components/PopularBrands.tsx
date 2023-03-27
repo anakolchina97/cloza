@@ -59,6 +59,7 @@ const PopularBrands = (props: Props) => {
 
 const PopularBrandsWrap = styled.section`
   margin-bottom: ${rem(64)};
+  border-bottom: 1px solid ${(props) => props.theme.colors.gray.light};
 `;
 
 const PopularBrandsHeader = styled.header`
@@ -74,6 +75,7 @@ const PopularBrandsTitle = styled(TitleH2)`
 
 const PopularBrandsSlider = styled.div`
   position: relative;
+  margin-bottom: ${rem(58)};
 `;
 
 export default PopularBrands;

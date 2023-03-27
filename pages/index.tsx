@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { useState } from "react";
 import styled from "styled-components";
 import Container from "../components/Container";
+import FeaturedSellers from "../components/FeaturedSellers";
 import NewGoods from "../components/NewGoods";
 import PopularBrands from "../components/PopularBrands";
 import PopularCategories from "../components/PopularCategories";
@@ -38,6 +39,7 @@ const Home: NextPage = () => {
               <NewGoods />
               <PopularCategories />
               <PopularBrands />
+              <FeaturedSellers />
             </>
           )}
         </div>
