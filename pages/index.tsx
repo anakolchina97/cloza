@@ -2,11 +2,13 @@ import type { NextPage } from "next";
 import { useState } from "react";
 import styled from "styled-components";
 import Container from "../components/Container";
+import FeaturedSellers from "../components/FeaturedSellers";
 import NewGoods from "../components/NewGoods";
 import PopularBrands from "../components/PopularBrands";
 import PopularCategories from "../components/PopularCategories";
 import Slider from "../components/Slider";
 import { ITab, Tabs } from "../components/Tabs";
+import Why from "../components/Why";
 
 const Home: NextPage = () => {
   const tabs: ITab[] = [
@@ -38,6 +40,8 @@ const Home: NextPage = () => {
               <NewGoods />
               <PopularCategories />
               <PopularBrands />
+              <FeaturedSellers />
+              <Why />
             </>
           )}
         </div>

@@ -5,19 +5,25 @@ import { rem, rgba } from "polished";
 interface IAdvantage {
   icon: string;
   title: string;
+  page?: string;
+  text: string;
 }
 
-const Advantage = ({ icon, title }: IAdvantage) => {
+const Advantage = ({ icon, title, text, page }: IAdvantage) => {
   return (
     <AdvantageWrap>
       <AdvantageIconBox>
         <AdvantageIcon icon={icon} />
       </AdvantageIconBox>
-      <AdvantageTitle
-        dangerouslySetInnerHTML={{
-          __html: title,
-        }}
-      ></AdvantageTitle>
+      <AdvantageTextBox>
+        <AdvantageTitle
+          dangerouslySetInnerHTML={{
+            __html: title,
+          }}
+          page={page}
+        ></AdvantageTitle>
+        {page && <AdvantageText>{text}</AdvantageText>}
+      </AdvantageTextBox>
     </AdvantageWrap>
   );
 };
@@ -35,6 +41,12 @@ const AdvantageIconBox = styled.div`
   background: ${(props) => props.theme.colors.white};
   border: 1px solid ${(props) => props.theme.colors.gray.light};
   margin-bottom: ${rem(24)};
+`;
+
+const AdvantageTextBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${rem(16)};
 `;
 
 const AdvantageIcon = styled.i<{ icon: string }>`
@@ -55,12 +67,17 @@ const AdvantageIcon = styled.i<{ icon: string }>`
   }
 `;
 
-const AdvantageTitle = styled.p`
+const AdvantageTitle = styled.p<{ page?: string }>`
   font-weight: 500;
-  font-size: ${rem(18)};
-  line-height: ${rem(22)};
+  font-size: ${(props) => (props.page ? rem(20) : rem(18))};
+  line-height: ${(props) => (props.page ? rem(24) : rem(22))};
   text-align: center;
   color: ${(props) => props.theme.colors.black};
+`;
+
+const AdvantageText = styled.p`
+  text-align: center;
+  color: ${(props) => props.theme.colors.gray.default};
 `;
 
 export default Advantage;
