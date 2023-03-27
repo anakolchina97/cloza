@@ -5,7 +5,7 @@ import { rem, rgba } from "polished";
 interface IAdvantage {
   icon: string;
   title: string;
-  page: string;
+  page?: string;
   text: string;
 }
 
@@ -67,7 +67,7 @@ const AdvantageIcon = styled.i<{ icon: string }>`
   }
 `;
 
-const AdvantageTitle = styled.p<{ page: string }>`
+const AdvantageTitle = styled.p<{ page?: string }>`
   font-weight: 500;
   font-size: ${(props) => (props.page ? rem(20) : rem(18))};
   line-height: ${(props) => (props.page ? rem(24) : rem(22))};

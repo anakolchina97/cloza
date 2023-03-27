@@ -6,7 +6,7 @@ import Advantage from "./Advantage";
 // TODO: разобраться и определить правильный тип
 interface IAdvantages {
   dataAdvantages: any;
-  page: string;
+  page?: string;
 }
 
 interface IAdvantage {
@@ -31,7 +31,7 @@ const Advantages = ({ dataAdvantages, page }: IAdvantages) => {
   );
 };
 
-const AdvantagesWrap = styled.div<{ page: string }>`
+const AdvantagesWrap = styled.div<{ page?: string }>`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: ${rem(24)};
