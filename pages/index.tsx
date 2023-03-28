@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Container from "../components/Container";
 import FeaturedSellers from "../components/FeaturedSellers";
 import NewGoods from "../components/NewGoods";
+import OurBlog from "../components/OurBlog";
 import PopularBrands from "../components/PopularBrands";
 import PopularCategories from "../components/PopularCategories";
 import Slider from "../components/Slider";
@@ -42,6 +43,7 @@ const Home: NextPage = () => {
               <PopularBrands />
               <FeaturedSellers />
               <Why />
+              <OurBlog />
             </>
           )}
         </div>

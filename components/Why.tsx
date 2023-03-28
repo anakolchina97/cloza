@@ -38,7 +38,7 @@ const Why = (props: Props) => {
 };
 
 const WhyWrap = styled.section`
-  margin-bottom: ${rem(60)};
+  margin-bottom: ${rem(64)};
   border-bottom: 1px solid ${(props) => props.theme.colors.gray.light};
 `;
 
