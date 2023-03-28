@@ -52,7 +52,7 @@ const OurBlog = (props: Props) => {
     },
   ];
   return (
-    <OurBlogWrap href={"/"}>
+    <OurBlogWrap>
       <OurBlogHeader>
         <OurBlogTitle>
           <OurBlogTitleInfo>Последние записи</OurBlogTitleInfo>
@@ -69,8 +69,8 @@ const OurBlog = (props: Props) => {
   );
 };
 
-const OurBlogWrap = styled(Link)`
-  margin-bottom: ${rem(100)};
+const OurBlogWrap = styled.section`
+  margin-bottom: ${rem(60)};
 `;
 
 const OurBlogHeader = styled.div`

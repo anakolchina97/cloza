@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 import { rem } from "polished";
+import Link from "next/link";
 
 interface IBlogCardImg {
   url: string;
@@ -23,7 +24,7 @@ const BlogCard = ({
   text,
 }: IBlogCard) => {
   return (
-    <BlogCardWrap>
+    <BlogCardWrap href={"/"}>
       <BlogCardImgBox>
         <BlogCardImg
           src={`/images/blog-${url}.png`}
@@ -40,7 +41,7 @@ const BlogCard = ({
   );
 };
 
-const BlogCardWrap = styled.article``;
+const BlogCardWrap = styled(Link)``;
 
 const BlogCardImgBox = styled.div`
   margin-bottom: ${rem(14)};
