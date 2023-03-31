@@ -153,7 +153,7 @@ const Categories: NextPage = () => {
   );
 };
 
-const CategoriesWrap = styled.div`
+const CategoriesWrap = styled.main`
   margin-bottom: ${rem(30)};
 `;
 
