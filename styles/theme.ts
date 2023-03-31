@@ -7,6 +7,7 @@ const theme = {
     gray: {
       default: "#9095a9",
       light: "#eff0f2",
+      white: "#f7f8f9",
     },
   },
   breakpoints: {},
