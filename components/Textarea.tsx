@@ -29,12 +29,12 @@ const TextareaLabel = styled.label`
 const TextareaWrap = styled.textarea`
   width: 100%;
   background: ${(props) => props.theme.colors.white};
-  border: 1px solid #eff0f2;
+  border: 1px solid ${(props) => props.theme.colors.gray.light};
   border-radius: ${rem(12)};
   padding: ${rem(14)} ${rem(16)};
   font-size: ${rem(16)};
   line-height: ${rem(19)};
-  font-family: "PT Root UI";
+  font-family: "PT Root UI", Arial, sans-serif;
   min-height: ${rem(124)};
   min-width: 100%;
   resize: vertical;
