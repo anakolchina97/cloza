@@ -1,11 +1,19 @@
+import { rem } from "polished";
 import React from "react";
 import styled from "styled-components";
 
-type Props = {};
+interface IBasket {
+  w?: number;
+  h?: number;
+  color?: string;
+}
 
-const Basket = (props: Props) => {
+const Basket = ({ w = 24, h = 24, color = "#121720" }: IBasket) => {
   return (
     <BasketIcon
+      w={w}
+      h={h}
+      color={color}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -22,11 +30,10 @@ const Basket = (props: Props) => {
   );
 };
 
-const BasketIcon = styled.svg`
-  fill: ${(props) => props.theme.colors.black};
-  &:hover {
-    fill: ${(props) => props.theme.colors.purple};
-  }
+const BasketIcon = styled.svg<{ w: number; h: number; color: string }>`
+  width: ${(props) => rem(props.w)};
+  height: ${(props) => rem(props.w)};
+  fill: ${(props) => props.color};
 `;
 
 export default Basket;

@@ -2,11 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import { rem } from "polished";
 
-type Props = {};
+interface IArrow {
+  w?: number;
+  h?: number;
+  color?: string;
+}
 
-const Arrow = (props: Props) => {
+const Arrow = ({ w = 24, h = 24, color = "#121720" }: IArrow) => {
   return (
     <ArrowIcon
+      w={w}
+      h={h}
+      color={color}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -18,10 +25,10 @@ const Arrow = (props: Props) => {
   );
 };
 
-const ArrowIcon = styled.svg`
-  width: ${rem(20)};
-  height: ${rem(20)};
-  fill: ${(props) => props.theme.colors.gray.default};
+const ArrowIcon = styled.svg<{ w: number; h: number; color: string }>`
+  width: ${(props) => rem(props.w)};
+  height: ${(props) => rem(props.w)};
+  fill: ${(props) => props.color};
 `;
 
 export default Arrow;
