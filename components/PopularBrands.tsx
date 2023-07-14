@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { rem } from "polished";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import { Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
